@@ -19,7 +19,11 @@ body {
     background-image: url("assets/f.jpg");
     background-size: cover;
     background-attachment: fixed;
-    color: white;
+    color: #020617;
+}
+
+main {
+    margin: auto 12rem;
 }
 
 h1 {
@@ -27,19 +31,63 @@ h1 {
     text-align: center;
     letter-spacing: 0.5rem;
     margin: 2rem auto;
+    color: white;
 }
 
-main {
-    margin: auto 16rem;
+button:first-of-type {
+    margin: 0 auto;
+    display: block;
+    padding: 0.75rem 2.5rem;
+    font-family: var(--font-family);
+    background-color: var(--m-primary);
+    color: white;
+    border-radius: 0.5rem;
+    border: 2px solid var(--l-primary);
+}
+
+button:first-of-type:hover {
+    background-color: var(--primary);
 }
 
 .library {
     display: grid;
-    grid-template:repeat()/ repeat(auto-fit, );
-    background: rgba(255, 255, 255, 0.3);
-    padding: 4rem;
-    border-radius: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .library__book {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.library__book>div:first-child,
+.library__book img {
+    width: 12rem;
+    height: 18rem;
+}
+
+
+.library__book h3 {
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+.library__book span {
+    display: inline-block;
+    font-size: 1.3125rem;
+    font-style: italic;
+    margin: 0.5rem auto;
+}
+
+.library__book p {
+    text-align: justify;
+    height: 10rem;
+    width: 100%;
+    line-height: 1rem;
+    overflow: hidden;
 }

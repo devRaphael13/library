@@ -59,9 +59,11 @@ books.forEach((book) => {
         <div>
             <img src=${book.cover} alt=${book.title} />
         </div>
-        <h3>${book.title}</h3>
-        <span>${book.author}</span>
-        <p>${book.description}</p>
+        <div>
+            <h3>${book.title}</h3>
+            <span>${book.author}</span>
+            <p>${book.description}</p>
+        </div>
     </article>
     `;
     library.innerHTML += element
