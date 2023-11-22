@@ -28,3 +28,18 @@ h1 {
     letter-spacing: 0.5rem;
     margin: 2rem auto;
 }
+
+main {
+    margin: auto 16rem;
+}
+
+.library {
+    display: grid;
+    grid-template:repeat()/ repeat(auto-fit, );
+    background: rgba(255, 255, 255, 0.3);
+    padding: 4rem;
+    border-radius: 1rem;
+}
+
+.library__book {
+}
