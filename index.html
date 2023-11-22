@@ -13,19 +13,31 @@
     <body>
         <main>
             <h1>Library</h1>
-            <button>Add Book</button>
+            <button id="add_book">Add Book</button>
 
-            <section id="library" class="library">
-
-            </section>
+            <section id="library" class="library"></section>
 
             <dialog id="dialog" class="library__action">
                 <form action="#" method="post">
-                    <label for="title">Title</label>
-                    <input id="title" type="text" required />
+                    <div>
+                        <label for="title">Title</label>
+                        <input id="title" type="text" required />
+                    </div>
 
-                    <label for="author">Author</label>
-                    <input id="author" type="text" required />
+                    <div>
+                        <label for="author">Author</label>
+                        <input id="author" type="text" required />
+                    </div>
+
+                    <div>
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description" cols="30" rows="10" required></textarea>
+                    </div>
+
+                    <div>
+                        <label for="cover_photo">Cover photo</label>
+                        <input type="url" name="cover_photo" id="cover_photo" required>
+                    </div>
                 </form>
             </dialog>
         </main>
