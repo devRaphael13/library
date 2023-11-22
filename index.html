@@ -8,10 +8,27 @@
         <link href="https://fonts.googleapis.com/css2?family=Alata&family=Allura&display=swap" rel="stylesheet" />
 
         <link rel="stylesheet" href="styles.css" />
-        <title>Document</title>
+        <title>Library</title>
     </head>
     <body>
-        <main></main>
+        <main>
+            <h1>Library</h1>
+            <button>Add Book</button>
+
+            <section id="library" class="library">
+
+            </section>
+
+            <dialog id="dialog" class="library__action">
+                <form action="#" method="post">
+                    <label for="title">Title</label>
+                    <input id="title" type="text" required />
+
+                    <label for="author">Author</label>
+                    <input id="author" type="text" required />
+                </form>
+            </dialog>
+        </main>
         <script src="scripts.js"></script>
     </body>
 </html>

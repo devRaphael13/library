@@ -2,6 +2,9 @@
     --primary: #59260b;
     --m-primary: #8b4513;
     --l-primary: #af6e4d;
+
+    --font-family: 'Alata', sans-serif;
+    --c-font-family: 'Allura', cursive;
 }
 
 * {
@@ -9,4 +12,19 @@
     padding: 0;
     font-size: 1rem;
     box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-image: url("assets/f.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+}
+
+h1 {
+    font: bold 6rem var(--c-font-family);
+    text-align: center;
+    letter-spacing: 0.5rem;
+    margin: 2rem auto;
 }
