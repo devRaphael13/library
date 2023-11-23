@@ -1,6 +1,7 @@
 const dialog = document.getElementById("dialog");
 const library = document.getElementById("library");
 const add_book = document.getElementById("add_book");
+const cancel = document.getElementById("cancel");
 
 let books = [
     {
@@ -68,10 +69,6 @@ books.forEach((book) => {
     library.innerHTML += element
 })
 
-add_book.addEventListener("click", (e) => {
-    if (dialog.open) {
-        dialog.close()
-    } else {
-        dialog.showModal()
-    }
-})
+add_book.addEventListener("click", (e) => {if (!dialog.open) dialog.showModal()})
+cancel.addEventListener("click", (e) => {if (dialog.open) dialog.close()})
+
