@@ -2,6 +2,7 @@ const dialog = document.getElementById("dialog");
 const library = document.getElementById("library");
 const add_book = document.getElementById("add_book");
 const cancel = document.getElementById("cancel");
+const main = document.getElementById("main");
 
 let books = [
     {
@@ -66,9 +67,18 @@ books.forEach((book) => {
         </div>
     </article>
     `;
-    library.innerHTML += element
-})
+    library.innerHTML += element;
+});
 
-add_book.addEventListener("click", (e) => {if (!dialog.open) dialog.showModal()})
-cancel.addEventListener("click", (e) => {if (dialog.open) dialog.close()})
-
+add_book.addEventListener("click", (e) => {
+    if (!dialog.open) {
+        dialog.showModal();
+        main.classList.toggle("blur")
+    }
+});
+cancel.addEventListener("click", (e) => {
+    if (dialog.open) {
+        dialog.close();
+        main.classList.toggle("blur")
+    }
+});
