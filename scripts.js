@@ -1,10 +1,12 @@
 const dialog = document.getElementById("dialog");
-const library = document.getElementById("library");
-const add_book = document.getElementById("add_book");
+const libraryElem = document.getElementById("library");
+const addBook = document.getElementById("add_book");
+const addBtn = document.getElementById("add_btn");
 const cancel = document.getElementById("cancel");
 const main = document.getElementById("main");
+const form = document.forms.addBookForm;
 
-let books = [
+let library = [
     {
         title: "The Magnificent Ambers",
         author: "Booth Tarkington",
@@ -54,8 +56,11 @@ let books = [
     },
 ];
 
-books.forEach((book) => {
-    let element = `
+document.addEventListener("DOMContentLoaded", render)
+
+function render() {
+    library.forEach((book) => {
+        let element = `
     <article class="library__book">
         <div>
             <img src=${book.cover} alt=${book.title} />
@@ -67,18 +72,37 @@ books.forEach((book) => {
         </div>
     </article>
     `;
-    library.innerHTML += element;
-});
+        libraryElem.innerHTML += element;
+    });
+}
 
-add_book.addEventListener("click", (e) => {
+addBook.addEventListener("click", (e) => {
     if (!dialog.open) {
         dialog.showModal();
-        main.classList.toggle("blur")
+        main.classList.toggle("blur");
     }
 });
 cancel.addEventListener("click", (e) => {
     if (dialog.open) {
         dialog.close();
-        main.classList.toggle("blur")
+        main.classList.toggle("blur");
     }
+});
+
+function Book(title, author, cover, description) {
+    this.title = title;
+    this.author = author;
+    this.cover = cover;
+    this.description = description;
+}
+
+addBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+    const book = new Book(data.get("title"), `${data.get("first_name")} ${data.get("last_name")}`, data.get("cover_photo"), data.get("description"));
+
+    library.push(book);
+    render();
+    main.classList.toggle("blur");
+    dialog.close();
 });

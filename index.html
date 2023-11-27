@@ -26,17 +26,17 @@
                 </svg>
 
                 <h2>Add a book</h2>
-                <form action="#" method="post">
-                    <input id="title" placeholder="Title of the book" type="text" required />
+                <form action="#" method="post" id="addBookForm">
+                    <input id="title" name="title" placeholder="Title of the book" type="text" required />
                     <input type="url" name="cover_photo" placeholder="Cover photo url" id="cover_photo" required />
-                    <input id="first_name" placeholder="Author's first name" type="text" required />
-                    <input id="last_name" placeholder="Author's last name" type="text" required />
+                    <input id="first_name" name="first_name" placeholder="Author's first name" type="text" required />
+                    <input id="last_name" name="last_name" placeholder="Author's last name" type="text" required />
                     <div>
                         <textarea name="description" id="description" placeholder="Description" cols="10" rows="5"></textarea>
                     </div>
 
                     <div>
-                        <button>Add</button>
+                        <button id="add_btn">Add</button>
                     </div>
                 </form>
             </dialog>
